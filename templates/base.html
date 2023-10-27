@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICAIF 2023 Trading Hackathon Challenge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+
+<body>
+    <header>
+        <h1>
+            ICAIF 2023 Trading Hackathon Challenge
+        </h1>
+        <nav>
+            <ul>
+                <li class="{{ 'active' if request.path == url_for('home') }}"><a href="{{ url_for('home') }}">Instructions</a></li>
+                <li class="{{ 'active' if request.path == url_for('register') }}"><a href="{{ url_for('register') }}">Register</a></li>
+                <li class="{{ 'active' if request.path == url_for('upload') }}"><a href="{{ url_for('upload') }}">Submit Solution</a></li>
+                <li class="{{ 'active' if request.path == url_for('teams') }}"><a href="{{ url_for('teams') }}">Leaderboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        AI Research&ensp;|&ensp;<img src="{{ url_for('static', filename='images/jpmc-logo-290x20px.png') }}" alt="Footer Image">
+    </footer>
+    -->
+</body>
+
+
+<script type="text/javascript">
+</script>
+
+</html>
