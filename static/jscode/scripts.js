@@ -1,3 +1,3 @@
 function redirectToHomePage() {
-    window.location.href = "home.html";
+    window.location.href = "templates/home.html";
 }
