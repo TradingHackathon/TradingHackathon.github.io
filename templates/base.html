@@ -6,37 +6,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ICAIF 2023 Trading Hackathon Challenge</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
 
 <body>
     <header>
+        <img src="/static/figures/JPMC_logo.svg" width="" height="" alt="">
         <h1>
             ICAIF 2023 Trading Hackathon Challenge
         </h1>
-        <nav>
-            <ul>
-                <li class="{{ 'active' if request.path == url_for('home') }}"><a href="{{ url_for('home') }}">Instructions</a></li>
-                <li class="{{ 'active' if request.path == url_for('register') }}"><a href="{{ url_for('register') }}">Register</a></li>
-                <li class="{{ 'active' if request.path == url_for('upload') }}"><a href="{{ url_for('upload') }}">Submit Solution</a></li>
-                <li class="{{ 'active' if request.path == url_for('teams') }}"><a href="{{ url_for('teams') }}">Leaderboard</a></li>
-            </ul>
-        </nav>
+        <p>
+            This hackathon aims to let participants build an equity trading algorithm that maximizes profit
+            by buying and selling stocks, like managing an investment portfolio. Participants will be provided
+            access to a certain number of years of historical data for a group of up to 500 stocks. Participants'
+            algorithms should review the daily price data and generate orders to buy or sell stocks.
+        </p>
+        <button onclick="redirectToHomePage()">Home</button>
     </header>
-
-    <!--
-    <main>
-        {% block content %}{% endblock %}
-    </main>
-    <footer>
-        AI Research&ensp;|&ensp;<img src="{{ url_for('static', filename='images/jpmc-logo-290x20px.png') }}" alt="Footer Image">
-    </footer>
-    -->
 </body>
 
 
-<script type="text/javascript">
-</script>
+<script type="text/javascript" src="/static/jscode/scripts.js"></script>
 
 </html>

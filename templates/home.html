@@ -1,12 +1,5 @@
-{% extends 'base.html' %}
-
-{% block title %}
-Home
-{% endblock %}
-
-{% block content %}
 <section id="instructions">
-    <h1>Welcome to our AI Research Trading Hackathon Challenage! </h1>
+    <h1>Welcome to the ICAIF 2023 Trading Hackathon!</h1>
     <p>
         We're excited that you're here to participate in our event. Whether you're a coding novice or an experienced
         developer, this hackathon is designed to provide you with an engaging and challenging experience.</p>
@@ -25,10 +18,7 @@ Home
     <ol>
         <li>Register your team via the "Register" page.</li>
         <li>You can download the instruction by clicking the button below:<br>
-            <a href="{{ url_for('download_file', filename='instruction.docx') }}" class="download-button">Instruction</a>
-        <li>You can download the data by clicking on the button below:<br>
-            <a href="{{ url_for('download_file', filename='all_data.zip') }}" class="download-button">Data</a>
-        </li>
+            <a href="/static/files/Trading_Hackathon.pdf" class="download-button">Instruction</a>
         <li>Use the training dataset to develop your trading algorithms/strategies.</li>
         <li>Use the testing dataset to evaluate the performance of your trading algorithms/strategies.</li>
         <li>Also, please use the testing dataset to generate trades files, as mentioned in the instruction.</li>
@@ -39,7 +29,7 @@ Home
 
     <h2>About The Data</h2>
     <p>
-        The data for this hackathon is a synthetic version of the S\&P 500, created by AI Research’s Synthetic Data group.
+        The data for this hackathon is a synthetic version of the S&P 500, created by AI Research's Synthetic Data group.
         It is intended to be a synthetic version of the market that can be used for testing trading algorithms.
         It is modeled after real data, with accurate similarities and correlations between groups of stocks.
 
@@ -54,12 +44,13 @@ Home
         Your program should operate in the following way, and follow these rules:
     </p>
     <ol>
-        <li>Your program should read in over 500 files, as follows:</li>
-        <ol>
-            <li>the market data (one file)</li>
-            <li>the financial data (about 500 files)</li>
-            <li>a strategy file, that describes to your algorithm how it should behave</li>
-        </ol>
+        <li>Your program should read in over 500 files, as follows:
+            <ol>
+                <li>the market data (one file)</li>
+                <li>the financial data (about 500 files)</li>
+                <li>a strategy file, that describes to your algorithm how it should behave</li>
+            </ol>
+        </li>
         <li>Assume you start with $1,000,000 in cash.</li>
         <li>The program should output a trades file (trades.csv) that lists the trades it would like to make for each day.</li>
     </ol>
@@ -72,5 +63,3 @@ Home
         and provide awards and rankings on each of those metrics.
     </p>
 </section>
-
-{% endblock %}

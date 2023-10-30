@@ -1,15 +1,16 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0 auto;  /* centers the body content */
-    width: 90%;  /* set the width you want */
+    margin: 0 auto;
+    width: 90%;
     height: 80%;
     min-height: 100vh;
-    background-color: #c7d3e6;
+    background-color: white;
 }
 
 header {
-    background-color: #1a7b99;
+    background-color: #3f5378;
     padding: 20px;
+    color: white;
 }
 
 footer {
@@ -51,29 +52,6 @@ footer {
     text-align: center;
     color: #5f5d5d;
     font-size: 25px;
-}
-
-/* Media query for tablets and desktops */
-@media (min-width: 768px) {
-    body {
-        width: 75%;  /* set the width you want */
-    }
-
-    nav ul {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    nav ul li {
-        margin-bottom: 0;
-    }
-}
-
-/* Media query for larger desktops */
-@media (min-width: 1200px) {
-    body {
-        width: 60%;  /* set the width you want */
-    }
 }
 
 .download-button {
