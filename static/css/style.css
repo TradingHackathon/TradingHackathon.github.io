@@ -3,7 +3,6 @@ body {
     margin: 0 auto;
     width: 70%;
     height: 100%;
-    min-height: 100vh;
     background-color: #c7d3e6;
 }
 
@@ -24,27 +23,15 @@ header {
 .title {
     order: 2;
     text-align: center;
-    font-size: 2vw;
+    font-size: 50px;
 }
 
 .content-container {
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
     padding: 0;
-    font-size: 0.8vw;
-    line-height: 1.8vh;
-}
-
-.button_cls {
-    background-color: #3f5378;
-    border: none;
-    border-radius: 0.5vh;
-    color: white;
-    text-align: center;
-    display: inline-block;
-    font-size: 1.5vw;
-    margin-bottom: 1vh;
-    padding: 0.5vw;
+    font-size: 18px;
+    line-height: 24px;
 }
 
 h2 {
