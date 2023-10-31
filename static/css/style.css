@@ -30,8 +30,9 @@ header {
 .content-container {
     width: 80%;
     margin: 0 auto;
-    padding: 1vw;
-    font-size: 0.8vw;
+    padding: 0;
+    font-size: 0.65vw;
+    line-height: 1.8vh;
 }
 
 .button_cls {
@@ -44,4 +45,16 @@ header {
     font-size: 1.5vw;
     margin-bottom: 1vh;
     padding: 0.5vw;
+}
+
+h2 {
+    margin-top: 4vh;
+}
+
+ul, ol {
+    margin-left: 1vw;
+}
+
+ul ul, ol ol, ul ol, ol ul {
+    margin-left: 0.5vw;
 }

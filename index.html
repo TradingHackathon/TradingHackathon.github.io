@@ -17,17 +17,361 @@
             ICAIF 2023 Trading Hackathon Challenge
         </h1>
     </header>
+
     <div class="content-container">
-        <h3>
+        <h2>
             Overview
-        </h3>
+        </h2>
         <p>
-            This hackathon aims to let participants build an equity trading algorithm that maximizes profit
-            by buying and selling stocks, like managing an investment portfolio. Participants will be provided
-            access to a certain number of years of historical data for a group of up to 500 stocks. Participants'
-            algorithms should review the daily price data and generate orders to buy or sell stocks.
+            We're excited that you're here to participate in our event. Whether you're a coding novice or an experienced
+            developer, this hackathon is designed to provide you with an engaging and challenging experience.
         </p>
-        <button class="button_cls" onclick="redirectToHomePage()">Instruction</button>
+        <p>
+            The objective for you in this hackathon is to build an equity trading algorithm that maximizes profit by
+            buying and selling stocks (i.e., manage an investment portfolio).  You will be provided access to years of
+            historical data for a group of 500 stocks. Your algorithm should step through the data, one day at a time,
+            and for each day, generate orders to buy or sell each of the 500 stocks.
+            You can work individually or form a team to work together.
+            Best of luck with your projects! We can't wait to see what you come up with!
+        </p>
+
+        <h2>
+            Summary
+        </h2>
+        <ol>
+            <li>Register your team.</li>
+            <li>You can download the detailed instruction by clicking the
+                <a href="static/files/Trading_Hackathon.pdf" class="download-button">Instruction</a>
+            <li>Use the training dataset to develop your trading algorithms/strategies.</li>
+            <li>Use the testing dataset to evaluate the performance of your trading algorithms/strategies.
+                <ul>
+                    <li>Also, please use the testing dataset to generate trades files, as mentioned in the instruction.</li>
+                    <li>Please note that you should NOT develop your trading algorithms/strategies using testing data.</li>
+                </ul>
+            </li>
+            <li>Submit your project.</li>
+            <li>The leaderboard will be updated in real-time.</li>
+        </ol>
+
+        <h2>
+            About The Data
+        </h2>
+        <p>
+            The data for this hackathon is a synthetic version of the S&P 500, created by AI Research's Synthetic Data group.
+            It is intended to be a synthetic version of the market that can be used for testing trading algorithms.
+            It is modeled after real data, with accurate similarities and correlations between groups of stocks.
+
+            The data that traders use to inform their trading is classified as "financial data" or "market data."
+            Financial data includes information related to a company's financial health, industry, and macroeconomic factors,
+            while market data focuses on historical price and volume information.
+            Traders analyze these types of data to make informed decisions about buying and selling stocks.
+        </p>
+        <h4>Market Data</h4>
+        <p>
+            The market data for this project is provided as a comma-separated-values (CSV) file,
+            where each row represents the data for one day. An example looks like this:
+        </p>
+        <table border="1" style="border-collapse: collapse; width: 50%; text-align: center;">
+            <caption>A market data example with five tickers</caption>
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>AAPL</th>
+                <th>IBM</th>
+                <th>JPM</th>
+                <th>TSLA</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>2005-01-03</td>
+                <td>52.2773</td>
+                <td>86.8520</td>
+                <td>60.4727</td>
+                <td>2.6500</td>
+            </tr>
+            <tr>
+                <td>2005-01-04</td>
+                <td>51.7295</td>
+                <td>85.7908</td>
+                <td>60.4137</td>
+                <td>2.6015</td>
+            </tr>
+            <tr>
+                <td>2005-01-05</td>
+                <td>52.0064</td>
+                <td>85.1988</td>
+                <td>60.3900</td>
+                <td>2.5867</td>
+            </tr>
+            <tr>
+                <td>2005-01-06</td>
+                <td>52.0417</td>
+                <td>85.6319</td>
+                <td>60.4313</td>
+                <td>2.5740</td>
+            </tr>
+            <tr>
+                <td>2005-01-07</td>
+                <td>52.1596</td>
+                <td>85.5092</td>
+                <td>60.4137</td>
+                <td>2.5570</td>
+            </tr>
+            <tr>
+                <td>2005-01-10</td>
+                <td>52.2420</td>
+                <td>85.9135</td>
+                <td>60.3841</td>
+                <td>2.5660</td>
+            </tr>
+            <tr>
+                <td>2005-01-11</td>
+                <td>52.5484</td>
+                <td>85.3215</td>
+                <td>60.4668</td>
+                <td>2.5888</td>
+            </tr>
+            <tr>
+                <td>2005-01-12</td>
+                <td>52.6191</td>
+                <td>85.6031</td>
+                <td>60.5553</td>
+                <td>2.5810</td>
+            </tr>
+            </tbody>
+        </table>
+        <h4>Financial Data</h4>
+        <p>
+            The financial data used by traders for investing generally falls into four categories:
+            Fundamental, Technical, Sentiment, and Macroeconomic:
+        </p>
+        <ul>
+            <li><b>Fundamental Analysis:</b> This approach involves evaluating a company's financial health,
+                competitive position, and overall economic environment.</li>
+            <li><b>Technical Analysis:</b> This approach involves analyzing historical price and volume data
+                to identify patterns and trends suggesting future price movements.</li>
+            <li><b>Market Sentiment:</b> Stock traders analyze market sentiment data, such as investor surveys,
+                put-call ratios, and short interest, to gauge investor sentiment and identify potential
+                contrarian trading opportunities. News feeds may also provide sentiment information.</li>
+            <li><b>Macroeconomic Indicators:</b> Stock traders consider the overall economic environment by
+                analyzing GDP growth, inflation, interest rates, and employment figures to identify how
+                these factors may impact a company's performance.</li>
+        </ul>
+        <p>
+            To simplify the project, we will precompute the values for five indicators and provide them to
+            participants for each stock in a CSV file named for that stock. For instance, the file providing
+            information about IBM is named IBM.CSV, and it looks like this:
+        </p>
+        <table border="1" style="border-collapse: collapse; width: 50%; text-align: center;">
+            <caption>A financial data example with five indicators</caption>
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>indicator01</th>
+                <th>indicator02</th>
+                <th>indicator03</th>
+                <th>indicator04</th>
+                <th>indicator05</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>2005-01-03</td>
+                <td>0.2773</td>
+                <td>1.8520</td>
+                <td>0.4727</td>
+                <td>1.6500</td>
+                <td>0.2773</td>
+            </tr>
+            <tr>
+                <td>2005-01-04</td>
+                <td>0.7295</td>
+                <td>1.7908</td>
+                <td>0.4137</td>
+                <td>0.6015</td>
+                <td>1.7908</td>
+            </tr>
+            <tr>
+                <td>2005-01-05</td>
+                <td>0.0064</td>
+                <td>1.1988</td>
+                <td>0.3900</td>
+                <td>0.5867</td>
+                <td>0.3900</td>
+            </tr>
+            <tr>
+                <td>2005-01-06</td>
+                <td>0.0417</td>
+                <td>-2.6319</td>
+                <td>-0.4313</td>
+                <td>-0.5740</td>
+                <td>-2.6319</td>
+            </tr>
+            <tr>
+                <td>2005-01-07</td>
+                <td>-0.1596</td>
+                <td>1.5092</td>
+                <td>0.4137</td>
+                <td>-1.5570</td>
+                <td>-0.1596</td>
+            </tr>
+            <tr>
+                <td>2005-01-10</td>
+                <td>1.2420</td>
+                <td>1.9135</td>
+                <td>0.3841</td>
+                <td>0.5660</td>
+                <td>1.9135</td>
+            </tr>
+            <tr>
+                <td>2005-01-11</td>
+                <td>0.5484</td>
+                <td>1.3215</td>
+                <td>-0.4668</td>
+                <td>1.5888</td>
+                <td>-0.4668</td>
+            </tr>
+            <tr>
+                <td>2005-01-12</td>
+                <td>0.6191</td>
+                <td>1.6031</td>
+                <td>0.5553</td>
+                <td>2.5810</td>
+                <td>1.6031</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h2>
+            Your Task
+        </h2>
+        <p>
+            Your program should operate in the following way, and follow these rules:
+        </p>
+        <ol>
+            <li>Your program should read in over 500 files, as follows:
+                <ul>
+                    <li>the market data (one file)</li>
+                    <li>the financial data (about 500 files)</li>
+                    <li>a strategy file, that describes to your algorithm how it should behave</li>
+                </ul>
+            </li>
+            <li>Assume you start with $1,000,000 in cash.</li>
+            <li>The program should output a trades file (trades.csv) that lists the trades it would like to make for each day.</li>
+        </ol>
+        <p>
+            The "trades.csv" file should be formatted like this:
+        </p>
+        <table border="1" style="border-collapse: collapse; width: 50%; text-align: center;">
+            <caption>A "trades.csv" file format example</caption>
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>AAPL</th>
+                <th>IBM</th>
+                <th>JPM</th>
+                <th>TSLA</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>2005-01-03</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>2005-01-04</td>
+                <td>100</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>2005-01-05</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>-100</td>
+            </tr>
+            <tr>
+                <td>2005-01-06</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>2005-01-07</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>2005-01-10</td>
+                <td>-100</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>2005-01-11</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>2005-01-12</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>100</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h2>
+            Evaluation
+        </h2>
+        <p>
+            We will provide a market simulator, that will read in your trades file, and the market data file,
+            then simulate your trades. It will provide some metrics of your trading performance, and charts showing how it did.
+            We will evaluate each algorithm according to <b>Sharpe ratio</b>, and <b>total return</b>,
+            and provide awards and rankings on each of those metrics.
+        </p>
+
+        <h2>
+            Procedure
+        </h2>
+        <p>
+            Participants will be provided with 20 folders of data. The folders are in two groups: "training” and "testing”,
+            e.g., training01 to training10 and testing01 to testing10. Participants can use the data in the training folders
+            to train or develop trading algorithms. Each folder will contain about 501 files (1 market and 500 financial data).
+            The data in each folder covers the same period, from January 2022 to December 2022.
+        </p>
+        <p>
+            Participants' algorithms must follow these rules:
+        </p>
+        <ul>
+            <li>No peeking into the future -- the algorithm should step through the data daily and make trading
+                decisions only on the data up to and including that day. It should not, for instance, look ahead to a
+                future price to make a trade in anticipation of that future price.</li>
+            <li>If the trading algorithm is learning or adaptive, the participant should reset it before running it
+                on each test set. For instance, the algorithm should not learn from data in testing01 in anticipation
+                of running on data in testing02.</li>
+            <li>Deterministic -- given the same data, the algorithm should always output the same trades. Participants
+                can use a random number generator, which should be initialized with the same seed each time.</li>
+            <li>Use of data -- participants should NOT allow their trading algorithms to look at the data in the testing
+                folders until the trading strategies or algorithms have been finalized.</li>
+            <li>If participants choose to revise or improve the trading algorithm, for instance, by learning or retraining,
+                they should ONLY use the training data for that purpose. Participants should never train on the testing data.</li>
+            <li>Participants should run the same trading algorithm on all the testing data.
+                Don't optimize trading algorithms for each folder.</li>
+        </ul>
     </div>
 </body>
 
