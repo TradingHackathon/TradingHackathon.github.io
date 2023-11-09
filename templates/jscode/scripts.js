@@ -17,7 +17,7 @@ function fnSubmitRegistration() {
             institution: institution
         };
 
-        fetch("https://script.google.com/macros/s/AKfycbw5_bbCSp7Vzxjau5duBmtzoelCr_jwzsD0wP2UQbZmtQx1Mgiu95IcnSafBXMaVyvNxQ/exec", {
+        fetch("https://script.google.com/macros/s/AKfycbz0SM8djOQZU60Lsd441lO33if81bwymJ1PUdIDuFKbywrBriI-EKzK_rz1pi7b58gIPA/exec", {
             method: "POST",
             mode: "no-cors",
             cache: "no-cache",
