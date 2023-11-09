@@ -1,8 +1,9 @@
 window.onload = function() {
     // open the default tab
     document.getElementById("tabHomeButton").click();
+}
 
-
+function fnSubmitRegistration() {
     document.getElementById("registrationForm").addEventListener("submit", function(event) {
         event.preventDefault();
 
@@ -31,12 +32,16 @@ window.onload = function() {
                 return response.json();
             })
             .then(data => {
-                document.getElementById("result").innerText = "Registration successful!";
+                document.getElementById("registrationStatus").innerHTML = "Registration successful!";
             })
             .catch((error) => {
-                document.getElementById("result").innerText = "Error: "+error;
+                document.getElementById("registrationStatus").innerHTML = "Error: "+error;
             });
     });
+
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("institution").value = "";
 }
 
 function fnOpenTab(tabName) {

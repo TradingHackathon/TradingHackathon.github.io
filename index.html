@@ -389,18 +389,17 @@
     </div>
 
     <div id="tabRegister" class="tabcontent">
-        <form id="registrationForm">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required><br>
+        <label for="name">Name:</label><br>
+        <input class="input_cls" type="text" id="name" name="name" required><br>
 
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br>
+        <label for="email">Email:</label><br>
+        <input class="input_cls" type="email" id="email" name="email" required><br>
 
-            <label for="institution">Institution:</label><br>
-            <input type="text" id="institution" name="institution" required><br>
+        <label for="institution">Institution:</label><br>
+        <input class="input_cls" type="text" id="institution" name="institution" required><br>
 
-            <input type="submit" value="Register">
-        </form>
+        <button class="button_cls" id="btnRegister" onclick="fnSubmitRegistration()">Register</button>
+        <div id="registrationStatus"></div>
     </div>
 
     <footer class="site-footer">

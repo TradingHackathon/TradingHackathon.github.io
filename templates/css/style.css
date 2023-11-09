@@ -89,7 +89,7 @@ ul ul, ol ol, ul ol, ol ul {
 .tabcontent#tabRegister {
     padding: 5vh 5vw;
     font-size: 24px;
-    line-height: 1.5;
+    line-height: 2.0;
 }
 
 .site-footer {
@@ -100,4 +100,29 @@ ul ul, ol ol, ul ol, ol ul {
     bottom: 0;
     width: 100%;
     line-height: 0.5;
+}
+
+#registrationStatus {
+    position: absolute;
+    top: 75vh;
+    left: 30vw;
+    line-height: 1.0;
+    font-size: 24px;
+}
+
+.button_cls {
+    background-color: #3f5378;
+    border: none;
+    border-radius: 0.5vh;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 24px;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    padding: 0.5vw;
+}
+
+.input_cls {
+    font-size: 24px;
 }
