@@ -1,6 +1,42 @@
 window.onload = function() {
     // open the default tab
     document.getElementById("tabHomeButton").click();
+
+
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const institution = document.getElementById("institution").value;
+
+        const formData = {
+            name: name,
+            email: email,
+            institution: institution
+        };
+
+        fetch("https://script.google.com/macros/s/AKfycbw5_bbCSp7Vzxjau5duBmtzoelCr_jwzsD0wP2UQbZmtQx1Mgiu95IcnSafBXMaVyvNxQ/exec", {
+            method: "POST",
+            mode: "no-cors",
+            cache: "no-cache",
+            contentType: "application/json",
+            processData: false,
+            body: JSON.stringify(formData),
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
+            })
+            .then(data => {
+                document.getElementById("result").innerText = "Registration successful!";
+            })
+            .catch((error) => {
+                document.getElementById("result").innerText = "Error: "+error;
+            });
+    });
 }
 
 function fnOpenTab(tabName) {
