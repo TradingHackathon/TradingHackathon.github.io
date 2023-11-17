@@ -22,6 +22,7 @@
             <button class="tabLinks" onclick="fnOpenTab('tabProcedure')">Procedure</button>
             <button class="tabLinks" onclick="fnOpenTab('tabRegister')">Register</button>
             <button class="tabLinks" onclick="fnOpenTab('tabSubmission')">Submission</button>
+            <button class="tabLinks" onclick="fnOpenTab('tabLeaderboard')">Leaderboard</button>
         </div>
     </header>
 
@@ -355,10 +356,10 @@
             Evaluation
         </h2>
         <p>
-            We will provide a market simulator, that will read in your trades file, and the market data file,
-            then simulate your trades. It will provide some metrics of your trading performance, and charts showing how it did.
+            We have a market simulator, which reads in your trades file and the market data file,
+            then simulates your trades. It provides some metrics of your trading performance, and charts showing how it did.
             We will evaluate each algorithm according to <b>Sharpe ratio</b>, and <b>total return</b>,
-            and provide awards and rankings on each of those metrics.
+            and provide awards and rankings on those metrics.
         </p>
 
         <h2>
@@ -412,11 +413,41 @@
             Submission methods
         </h2>
         <p>
-            Please email your results, the trade files in CSV format, with your team name to the contact email: haibei.zhu@jpmchase.com
+            Please email your results, the trade files in CSV format, with your team name to the contact email:
+            <strong style="color:blue">haibei.zhu@jpmchase.com</strong>
         </p>
         <p>
             We will evaluate your results given the metrics mentioned in the Procedure and update the leaderboard.
         </p>
+    </div>
+
+    <div id="tabLeaderboard" class="tabcontent">
+        <h2>
+            Leaderboard
+        </h2>
+        <p>
+            Last update: 11/16/2023, 11:00pm, ET
+        </p>
+        <table style="border-collapse: collapse; width: 90%; text-align: center;">
+            <thead>
+            <tr>
+                <th>Team Name</th>
+                <th>Submission Date</th>
+                <th>Sharpe ratio</th>
+                <th>total return</th>
+                <th>Ranking</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>test_name</td>
+                <td>11/16/2023</td>
+                <td>0.0</td>
+                <td>0.0</td>
+                <td>0</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 
     <footer class="site-footer">
